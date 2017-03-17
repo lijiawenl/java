@@ -18,6 +18,8 @@ public class tesy {
     public static  void main( String[] args){
         System.out.println("3乘8=" + powern(3,8));
         System.out.println("3乘7=" + powerw(3,7));
+        System.out.println("3乘7=" + powerw(3,6));
     }
+
 }
 
