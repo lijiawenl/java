@@ -10,8 +10,14 @@ public class tesy {
             m=m<<1;
         return m;
     }
+    public static int powerw(int m,int n){
+        for ( int i=0 ;i<n;i++)
+            m=m<<1;
+        return m;
+    }
     public static  void main( String[] args){
-        System.out.println("3乘8=" + powern(3,4));
+        System.out.println("3乘8=" + powern(3,8));
+        System.out.println("3乘7=" + powerw(3,7));
     }
 }
 
