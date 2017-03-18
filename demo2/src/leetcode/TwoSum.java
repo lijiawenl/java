@@ -6,8 +6,8 @@ package leetcode;
 import java.util.HashMap;
 
 
-
-public class Two_Sum {
+/* HashMap的常用方法，isEmpty，put,get,containsKey*/
+public class TwoSum {
     public static int[] twoSum(int[] numbers, int target) {
 
         if(numbers.length>=2)
