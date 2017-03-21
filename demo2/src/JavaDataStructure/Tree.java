@@ -19,7 +19,7 @@ public class Tree<Key extends Comparable<key>,Value> {
         private Node rightChild;
         private int N;
 
-        public Node(Key key, Value value, int N) {
+        public TreeNode(Key key, Value value, int N) {
             this.key = key;
             this.value = value;
             this.N = N;
@@ -35,7 +35,7 @@ public class Tree<Key extends Comparable<key>,Value> {
         return size(root);
     }
 
-    private size(Node x) {
+    private int size(Node x) {
         if (x == null)
             return 0;
         else return x.N;

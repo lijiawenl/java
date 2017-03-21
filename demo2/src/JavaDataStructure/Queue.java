@@ -18,11 +18,11 @@ public class Queue {
          */
     }
     private int N;//设置为私有的
-    private first = new Node();
-    private last = new Node();
+    private Node first = new Node();
+    private Node last = new Node();
 
-    public int size( return N;)
-    public boolean isempty(){ return first == null}
+    public int size(){ return N;}
+    public boolean isempty(){ return first == null;}
     public void push( Item item){
         Node oldlast = last;
         last = new Node();

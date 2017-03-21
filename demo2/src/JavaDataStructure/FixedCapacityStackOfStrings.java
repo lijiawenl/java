@@ -10,7 +10,7 @@ public class FixedCapacityStackOfStrings<Item> {
     private  Item[] a; //栈的入口，固定的大小
     private  int N; //栈的大小
     public  FixedCapacityStackOfStrings(int cap)
-    { a = （Item[]）new Object[cap];//修改为泛型的版本，需要将类型改为Item,类型转换得到泛型数组
+    {  /*修改为泛型的版本，需要将类型改为Item,类型转换得到泛型数组*/
     }
     public boolean isempty(){
         return N == 0;
@@ -39,15 +39,15 @@ public class FixedCapacityStackOfStrings<Item> {
         a = temp ;
     }
     public Iterator<Item> iterator(){
-        return new ReverseArrayIterator()
+        return new ReverseArrayIterator();
     }
     //定义嵌套类,为private
     private class ReverseArrayIterator implements Iterator<Item>{
         private int i = N;
-        public boolean hasNext( return i > 0;)
+        public boolean hasNext(){return i > 0;}
 
         public Item  next() {
-            return a[--i]}
+            return a[--i];}
             public void remove(){}
     }
    /** public static void main(String[] args){

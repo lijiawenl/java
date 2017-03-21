@@ -20,8 +20,8 @@ public class List {
     }
     private Node first;
     private int N;//设置为私有的
-    public int size( return N;)
-    public boolean isempty(){ return first == null}
+    public int size(){ return N;}
+    public boolean isempty(){ return first == null;}
     public void push( Item item){
         Node oldfirst = first;
         first = new Node();
