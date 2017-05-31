@@ -1,0 +1,75 @@
+import java.util.Scanner;
+import java.math.*;
+public class Main1 {
+	public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        Object x[][];/*string和int 混合存储可以么*/
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < 4; j++){
+               x[i][j] = sc.nextInt();
+                
+            }
+        } 
+        double ans=p(x,n);
+        System.out.println(ans);
+	}
+	private static double p(Object x[][],int n){
+		if(n==1||n==2){
+			return 0;
+		}
+		int nod1=0;
+		int nod2=0;
+		int nod3=0;
+		double[] se;
+		for(int i=0;i<n;i++){
+			nod1=i;
+			for(int j=i+1;j<n;j++){
+				nod2=j;
+				double[] aren=new double[n-j];
+				for(int k=j+1;k<n;k++){
+					nod3=k;
+				if((x[nod1][1].equals(x[nod2][1]))&&(x[nod2][1].equals(x[nod3][1]))){
+					ar(x,nod1,nod2,nod3);
+				}
+				
+                if(!(x[nod1][1].equals(x[nod2][1]))&&(!x[nod2][1].equals(x[nod3][1]))&&(!x[nod1][1].equals(x[nod3][1]))){
+					
+				}
+					
+					/*计算三角形大小*/
+				 	
+				}
+			}
+		}
+	}
+	private static double ar(Object[][] x,int nod1,int nod2,int nod3){
+		double l1=0;
+		double l2=0;
+		double l3=0;
+		double tmp=0;
+		double s=0;
+		double pr=0;
+		for(int i=1;i<4;i++){
+			 tmp=([nod1][i]-x[nod2][i])*(x[nod1][i]-x[nod2][i]);
+			l1=tmp+l1;
+		}
+		l1=Math.sqrt(l1);
+		for(int i=1;i<4;i++){
+			 tmp=([nod2][i]-x[nod3][i])*(x[nod2][i]-x[nod3][i]);
+			l2=tmp+l2;
+		}
+		l1=Math.sqrt(l2);
+		for(int i=1;i<4;i++){
+			 tmp=([nod1][i]-x[nod3][i])*(x[nod1][i]-x[nod3][i]);
+			l3=tmp+l3;
+		}
+		l1=Math.sqrt(l3);
+		pr=(l1+l2+l3)/2;
+		s=Math.sqrt(pr(pr-l1)(pr-l2)(pr-l3));
+		return s;
+	}
+	
+	
+	
+}
