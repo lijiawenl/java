@@ -1,0 +1,101 @@
+package JavaDataStructure;
+
+import javax.xml.soap.Node;
+import java.awt.event.ItemEvent;
+
+/**
+ * Created by Gunwen on 2017/3/19.
+ */
+public class Tree<Key extends Comparable<Key>,Value> {
+    private class TreeNode {
+        /**
+         * @param level 灞�
+         * @param data 鏁版嵁鍩�
+         */
+        private Value value;
+        private Key key;
+        private boolean isVisted;
+        private Node leftChild;
+        private Node rightChild;
+        private int N;
+
+        public TreeNode(Key key, Value value, int N) {
+            this.key = key;
+            this.value = value;
+            this.N = N;
+        }
+    }
+
+    private TreeNode root;
+
+    public int size() {
+        /**
+         * 杩斿洖鏍戠殑楂樺害锛岃皟鐢ㄧ鏈夋柟娉曪紝淇濊瘉灏佽鎬�
+         */
+        return size(root);
+    }
+
+    private int size(Node x) {
+        if (x == null)
+            return 0;
+        else return x.N;
+
+    }
+
+    public Value get(Key key) {
+        /**
+         * 杩斿洖鏍戠殑鎸囧畾閿殑鍊硷紝璋冪敤绉佹湁鏂规硶锛屼繚璇佸皝瑁呮��
+         */
+        return get(root, key);
+
+    }
+
+    private Value get(Node x, Key key) {
+
+        if (x == null) return null;
+        int cmp = key.compareTo(x.key);
+        if (cmp < 0) get(x.leftChild, Key);
+        if (cmp > 0) get(x.rightChild, Key);
+        else return x.value;
+
+    }
+
+    public void put(Key key, Value value) {
+        root = put(root, key, val);
+    }
+
+    private Node put(Node x, Key key, Value value) {
+        if (x == null) return new Node(key, value, 1);//褰撴柟娉曢亣鍒颁竴涓┖鐨勮妭鐐规椂锛屼細灏唍ull鐨勮妭鐐圭敓鎴愪竴涓柊鐨勮妭鐐�
+        int cmp = key.compareTo(x.key);
+        if (cmp < 0) x.leftChild = put(x.leftChild, key, value);//杩斿洖鏌ユ壘鍒扮殑鑺傜偣锛岄�掑綊缁堢粨鍦▁==null澶勶紝璺冲嚭閫掑綊鍚庡皢缁х画鎺ヤ笅鍘荤殑鏇存柊锛�
+        //鐩村埌鏈�鍚庤繑鍥炴洿鏂拌繃N鏍硅妭鐐广��
+        if (cmp > 0) x.rightChild = put(x.rightChild, key, value);
+        else x.value = value;
+        x.N = size(x.leftChild) + size(x.rightChild) + 1;//娌跨潃鏌ユ壘鐨勮矾寰勬洿鏂版瘡涓妭鐐圭殑鍊�
+        return x;
+
+    }
+   public Key min(){
+       /**
+        * 杩斿洖鏍戠殑鏈�灏忓�硷紝璋冪敤绉佹湁鏂规硶锛屼繚璇佸皝瑁呮��
+        */
+       return min(root).key;
+   }
+   private Node min(Node x){
+       if (x.leftChild == null ) return  x;
+       else return min(x.leftChild);
+   }
+    public Key max(){
+        /**
+         * 杩斿洖鏍戠殑鏈�澶у�硷紝璋冪敤绉佹湁鏂规硶锛屼繚璇佸皝瑁呮��
+         */
+        return max(root).key;
+    }
+    private Node min(Node x){
+        if (x.rightChild == null ) return  x;
+        else return max(x.rightChild);
+    }
+
+
+
+}
