@@ -28,13 +28,13 @@ public class ThreeSum {
           }
           return k;
       }
-      List<List<Integer>>  k= new LinkedList<List<Integer>>();
+      List<List<Integer>>  z= new LinkedList<List<Integer>>();
       List<Integer> m = new LinkedList<Integer>();
       m.add(-1);
       m.add(-1);
       m.add(-1);
-      k.add(m);
-      return k;
+      z.add(m);
+      return z;
 
     }
     public static void main(String args[]){

@@ -1,4 +1,4 @@
-package JavaBase;
+package javaBasic;
 
 public class valueOrQuote {
 //该class探究的是java的按值传递和按引用传递
@@ -6,6 +6,9 @@ public class valueOrQuote {
 		// TODO Auto-generated method stub
  int a = 20;
  String mString = "original";
+ 
+ System.out.println(a);
+ F(a);
  
  System.out.println(mString);
  F1(mString);
@@ -20,7 +23,7 @@ public class valueOrQuote {
 	
 	public static void F(int a){
 		a= 50;
-		System.out.println("函数内的a"+a);
+		System.out.println("函数内的a="+a);
 	}
 	public static void F1(String mString){
 		mString= "sad";

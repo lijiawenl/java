@@ -1,4 +1,4 @@
-package JavaBase;
+package leetcode;
 
 public class BestSellCooldown {
 public static void main(String[] args){

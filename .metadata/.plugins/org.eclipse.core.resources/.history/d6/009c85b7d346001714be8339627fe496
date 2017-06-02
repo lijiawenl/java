@@ -1,0 +1,72 @@
+import java.util.Stack;
+
+public class visitTree {
+
+	//钱，中，后序遍历树的形式；
+	class TreeNode{
+		int val;
+		TreeNode left;
+		TreeNode right;
+	}
+	//递归版本
+	void F(TreeNode root){
+		if(root==null)return;
+		 visit(root);
+		F(root.left);
+		F(root.right);
+		
+	}
+	void F1(TreeNode root){
+		if(root==null)return;
+		 visit(root);
+		F(root.left);
+		 visit(root);
+		F(root.right);
+		
+	}
+	void F2(TreeNode root){
+		
+		if(root==null)return;
+	 
+		F(root.left);
+		F(root.right);
+		visit(root);
+	}
+	//非递归的版本
+	
+	void Fr(TreeNode root){
+		Stack<TreeNode> s = new Stack<TreeNode>();
+		TreeNode node =root;
+		while(root!=null||!s.isEmpty()){
+			if(root!=null){
+				visit(root);
+				s.push(node);
+				node =node.left;
+			}else{
+				node = s.pop();
+				node = node.right;
+			}
+		}
+	}
+	void F1r(TreeNode root){
+		Stack<TreeNode> s = new Stack<TreeNode>();
+		TreeNode node =root;
+		while(root!=null||!s.isEmpty()){
+			if(root!=null){
+				s.push(node);
+				node =node.left;
+			}else{
+				node = s.pop();
+				visit(root);
+				node = node.right;
+			}
+		}
+	}
+	
+	
+	void visit(TreeNode m){
+		
+	}
+	
+	
+}

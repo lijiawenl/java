@@ -1,4 +1,4 @@
-package JavaBase;
+package javaBasic;
 
 public class parseAndValue {
 

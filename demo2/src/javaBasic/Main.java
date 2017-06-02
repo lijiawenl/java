@@ -1,4 +1,4 @@
-package JavaBase;
+package javaBasic;
 
 import java.util.Hashtable;
 import java.util.Scanner;

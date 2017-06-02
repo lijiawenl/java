@@ -1,3 +1,4 @@
+package javaBasic;
 import java.util.Scanner;
 import java.math.*;
 public class Main1 {

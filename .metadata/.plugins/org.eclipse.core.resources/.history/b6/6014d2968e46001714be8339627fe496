@@ -1,0 +1,22 @@
+package javaBasic;
+import java.util.*;
+
+public class queueAStack {
+//this is a demo about queue and stack
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+      Deque<Integer> m = new LinkedList<Integer>();
+      m.offer(2);
+      m.offer(3);
+      m.offer(4);
+      m.offer(5);
+      
+      //注意使用原始的collection 类的方法会出现一些异常
+	  //queue FIFO;
+      int z =m.pollFirst();
+      //stack FILO
+      int s =m.pollLast();
+		
+	}
+
+}

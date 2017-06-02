@@ -1,0 +1,39 @@
+
+
+public class visitTree {
+
+	//钱，中，后序遍历树的形式；
+	class TreeNode{
+		int val;
+		TreeNode left;
+		TreeNode right;
+	}
+	void F(TreeNode root){
+		if(root==null)return;
+		 visit(root);
+		F(root.left);
+		F(root.right);
+		
+	}
+	void F1(TreeNode root){
+		if(root==null)return;
+		 visit(root);
+		F(root.left);
+		 visit(root);
+		F(root.right);
+		
+	}
+	void F2(TreeNode root){
+		
+		if(root==null)return;
+	 
+		F(root.left);
+		F(root.right);
+		visit(root);
+	}
+	void visit(TreeNode m){
+		
+	}
+	
+	
+}

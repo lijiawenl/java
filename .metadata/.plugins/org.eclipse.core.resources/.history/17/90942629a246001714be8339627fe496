@@ -1,0 +1,70 @@
+package leetcode;
+
+
+import java.util.Deque;
+import java.util.LinkedList;
+
+import leetcode.mirriorTree.TreeNode;
+
+public class depthTree {
+	class TreeNode{
+		int val;
+		TreeNode left;
+		TreeNode right;
+	}
+ //the depth of the tree;
+	
+	int f(TreeNode root){
+		if(root ==null){
+			return 0;
+		}
+		if(root.left==null){
+			return 1+f(root.right);
+		}
+		if(root.right==null){
+			return 1+f(root.left);//afterOrder £¬current root value is decided by its left and right
+		}
+		return 1+Math.max(f(root.left),f(root.right));
+		
+		
+	}
+	int f1(TreeNode root){
+		if(root ==null){
+			return 0;
+		}
+		return 1+Math.max(f(root.left),f(root.right));
+		
+		
+	}
+	//none-recursive
+	int f2(TreeNode root){
+		if(root == null){
+			return 0;
+		}
+		int level =0;
+		int size = 0;
+		Deque<TreeNode> m = new LinkedList<TreeNode>();
+		m.offer(root);
+		size=1;
+		while(!m.isEmpty()){
+		    while(size>0){
+		    TreeNode temp =m.poll();
+		    size=size-1;
+			System.out.println(temp);
+			if(temp.left!=null){
+				m.offer(temp.left);
+	
+			}
+			if(temp.right!=null){
+				m.offer(temp.right);
+				
+			}
+		    }
+		    size =m.size();
+			level++;	
+		}
+		return level;
+			
+	}
+	
+}

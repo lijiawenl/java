@@ -1,0 +1,11 @@
+package leetcode;
+
+
+
+public class biserchTreeDeList {
+	class TreeNode{
+		int val;
+		TreeNode left;
+		TreeNode right;
+	}
+}

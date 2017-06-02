@@ -1,4 +1,4 @@
-package JavaBase;
+package javaBasic;
 
 
 class Resource{}

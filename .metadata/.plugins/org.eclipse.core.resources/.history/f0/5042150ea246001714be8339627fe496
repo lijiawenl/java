@@ -1,0 +1,37 @@
+package leetcode;
+
+
+import leetcode.mirriorTree.TreeNode;
+
+public class depthTree {
+	class TreeNode{
+		int val;
+		TreeNode left;
+		TreeNode right;
+	}
+ //the depth of the tree;
+	
+	int f(TreeNode root){
+		if(root ==null){
+			return 0;
+		}
+		if(root.left==null){
+			return 1+f(root.right);
+		}
+		if(root.right==null){
+			return 1+f(root.left);//afterOrder £¬current root value is decided by its left and right
+		}
+		return 1+Math.max(f(root.left),f(root.right));
+		
+		
+	}
+	int f1(TreeNode root){
+		if(root ==null){
+			return 0;
+		}
+		return 1+Math.max(f(root.left),f(root.right));
+		
+		
+	}
+	
+}

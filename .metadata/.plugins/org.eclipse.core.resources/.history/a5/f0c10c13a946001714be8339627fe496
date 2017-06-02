@@ -1,0 +1,24 @@
+package leetcode;
+
+import leetcode.deleteDuplecate.LinkedList;
+import leetcode.depthTree.TreeNode;
+//ppanduan erchahsu shifoupinhheng;
+public class balancedTree {
+	class LinkedList{
+		LinkedList next;
+		int data;
+	}
+	boolean F(TreeNode root){
+		if(root == null){
+			return true;
+		}
+		int left =depthTree.f(root.left) ;
+		int right =depthTree.f(root.right);
+		if(left-right>1||left-right<1){
+			return false;
+		}
+		return F(root.left)&&F(root.right);//preorder
+		
+	}
+	
+}
