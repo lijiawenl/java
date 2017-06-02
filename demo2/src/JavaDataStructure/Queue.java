@@ -3,7 +3,7 @@ package JavaDataStructure;
 /**
  * Created by DELL on 2017/3/18.
  */
-public class Queue {
+public class Queue<Item,Node>  {
     private class Node{
         Item item;
         Node next;

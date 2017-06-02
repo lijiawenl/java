@@ -29,7 +29,7 @@ public class FixedCapacityStackOfStrings<Item> {
         Item item = a[--N];
         a[N] = null;
         if (N >0 && N == a.length/4) resize(a.length/2);
-        return Item;
+        return item;
     }
 
     private void resize( int max){

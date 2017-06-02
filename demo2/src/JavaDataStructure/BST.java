@@ -61,8 +61,21 @@ public class BST<Key extends Comparable<Key>,Value> {
 
     }
     
+    private Value get1(TreeNode x, Key key) {
+
+    	if (x == null) return null;
+        while(x!=null){
+        	int cmp = key.compareTo(x.key);
+        	if(cmp ==0) return x.value;
+            if (cmp < 0) x =x.leftChild;
+            else if (cmp > 0) x =x.rightChild;
+        }
+     
+        return null;
+
+    }
+    //非递归的版本的get方法
     
-    //非递归的版本
 
     public void put(Key key, Value value) {
         root = put(root, key, value);
@@ -99,6 +112,40 @@ public class BST<Key extends Comparable<Key>,Value> {
         if (x.rightChild == null ) return  x;
         else return max(x.rightChild);
     }
+    /*
+     删除操作
+     */
+    public void deleteMin(){
+    	root = deleteMin(root);
+    }
+    private TreeNode deleteMin(TreeNode x){
+    	if (x.leftChild ==null) return x.rightChild;
+    	x.leftChild =deleteMin(x.leftChild);//递归返回一个右节点即可x.leftChild =x.leftChild.rightChild;
+    	x.N =size(x.leftChild)+size(x.rightChild)+1;
+    	return x;
+    }
+    
+    public void delete(Key key){
+    	root = delete(root,key);
+    }
+    private TreeNode delete(TreeNode x,Key key){
+    	if(x==null) return null;
+    	int cmp = key.compareTo(x.key);
+    	if(cmp<0) x.leftChild =delete(x.leftChild,key);//小于零，x的左节点是左子树删除得到的结果；
+    	else if(cmp>0) x.rightChild =delete(x.rightChild,key);//大于零，x的左节点是左子树删除得到的结果；
+    
+    	if (x.rightChild==null) return x.leftChild;
+    	if(x.leftChild==null) return x.rightChild;
+    	TreeNode t =x;
+    	x =min(t.rightChild);
+    	x.rightChild =deleteMin(t.rightChild);
+    	x.leftChild =t.leftChild;
+    	x.N =size(x.leftChild)+size(x.rightChild)+1;
+    	return x;//对于当前节点的更新，递归返回后会将x和之前的连接一起代码行135和136
+    }
+    
+    
+    
 
 
 

@@ -4,7 +4,7 @@ package JavaDataStructure;
  * Created by DELL on 2017/3/18.
  * 基于链表实现栈
  */
-public class List {
+public class List<Item,Node> {
     private class Node{
         Item item;
         Node next;
@@ -30,12 +30,8 @@ public class List {
         N++;
 
     }
-    public Item pop( ){
-        Item item = item;
-        first =first.item;
-        N--;
-        return item;
-
-    }
+   // public Item pop( ){
+       
+  //  }
 
 }

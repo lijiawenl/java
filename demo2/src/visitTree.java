@@ -2,13 +2,13 @@ import java.util.Stack;
 
 public class visitTree {
 
-	//Ç®£¬ÖĞ£¬ºóĞò±éÀúÊ÷µÄĞÎÊ½£»
+	//æ ‘çš„éå†æ–¹å¼
 	class TreeTreeNode{
 		int val;
 		TreeTreeNode left;
 		TreeTreeNode right;
 	}
-	//µİ¹é°æ±¾
+	//é€’å½’
 	void F(TreeTreeNode root){
 		if(root==null)return;
 		 visit(root);
@@ -32,7 +32,7 @@ public class visitTree {
 		F(root.right);
 		visit(root);
 	}
-	//·Çµİ¹éµÄ°æ±¾
+	//éé€’å½’ï¼Œwhile(){}
 	
 	void Fr(TreeTreeNode root){
 		Stack<TreeTreeNode> s = new Stack<TreeTreeNode>();
@@ -63,9 +63,9 @@ public class visitTree {
 		}
 	}
 	
-	public void F2r(TreeTreeNode root) {   //ºóĞò±éÀú
+	public void F2r(TreeTreeNode root) {   //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		Stack<TreeTreeNode> stack = new Stack<TreeTreeNode>();
-		Stack<TreeTreeNode> output = new Stack<TreeTreeNode>();//¹¹ÔìÒ»¸öÖĞ¼äÕ»À´´æ´¢ÄæºóĞò±éÀúµÄ½á¹û
+		Stack<TreeTreeNode> output = new Stack<TreeTreeNode>();//ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ğ¼ï¿½Õ»ï¿½ï¿½ï¿½æ´¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½
 		TreeTreeNode Node = root;
 		while (Node != null || stack.size() > 0) {
 			if (Node != null) {

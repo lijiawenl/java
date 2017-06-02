@@ -1,0 +1,118 @@
+package JavaDataStructure;
+
+import javax.xml.soap.Node;
+import java.awt.event.ItemEvent;
+
+/**
+ * Created by Gunwen on 2017/3/19.
+ */
+public class BST<Key extends Comparable<Key>,Value> {
+    private class TreeNode {
+        /**
+         * @param level
+         * @param data 
+         */
+        private Value value;
+        private Key key;
+        private boolean isVisted;
+        private TreeNode leftChild;
+        private TreeNode rightChild;
+        private int N;
+
+        public TreeNode(Key key, Value value, int N) {
+            this.key = key;
+            this.value = value;
+            this.N = N;
+        }
+    }
+
+    private TreeNode root;
+
+    public int size() {
+        /**
+         * 
+         */
+        return size(root);
+    }
+
+    private int size(TreeNode x) {
+        if (x == null)
+            return 0;
+        else return x.N;
+
+    }
+
+    public Value get(Key key) {
+        /**
+         * 
+         */
+        return get(root,key);
+
+    }
+
+    private Value get(TreeNode x, Key key) {
+
+    	if (x == null) return null;
+        int cmp = key.compareTo(x.key);
+        if(cmp ==0) return x.value;
+        if (cmp < 0) get(x.leftChild, key);
+        else if (cmp > 0) get(x.rightChild, key);
+        return null;
+
+    }
+    
+    private Value get1(TreeNode x, Key key) {
+
+    	if (x == null) return null;
+        while(x!=null){
+        	int cmp = key.compareTo(x.key);
+        	if(cmp ==0) return x.value;
+            if (cmp < 0) x =x.leftChild;
+            else if (cmp > 0) x =x.rightChild;
+        }
+     
+        return null;
+
+    }
+    //非递归的版本的get方法
+    
+
+    public void put(Key key, Value value) {
+        root = put(root, key, value);
+    }
+
+    private TreeNode put(TreeNode x, Key key, Value value) {
+        if (x == null) return new TreeNode(key, value, 1);//
+        int cmp = key.compareTo(x.key);
+        if (cmp < 0) x.leftChild = put(x.leftChild, key, value);//
+        //
+        if (cmp > 0) x.rightChild = put(x.rightChild, key, value);
+        else x.value = value;
+        x.N = size(x.leftChild) + size(x.rightChild) + 1;//
+        return x;
+
+    }
+   public Key min(){
+       /**
+        * 
+        */
+       return min(root).key;
+   }
+   private TreeNode min(TreeNode x){
+       if (x.leftChild == null ) return  x;
+       else return min(x.leftChild);
+   }
+    public Key max(){
+        /**
+         * 
+         */
+        return max(root).key;
+    }
+    private TreeNode max(TreeNode x){
+        if (x.rightChild == null ) return  x;
+        else return max(x.rightChild);
+    }
+
+
+
+}
