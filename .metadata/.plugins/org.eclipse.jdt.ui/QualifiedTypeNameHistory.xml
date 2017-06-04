@@ -4,4 +4,5 @@
 <fullyQualifiedTypeName name="java.util.Deque"/>
 <fullyQualifiedTypeName name="java.util.Stack"/>
 <fullyQualifiedTypeName name="visitTree.TreeNode"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
 </qualifiedTypeNameHistroy>

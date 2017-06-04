@@ -8,7 +8,6 @@ public class balancedTree {
 		LinkedList next;
 		int data;
 	}
-	// java method 1;
 	boolean F(TreeNode root){
 		if(root == null){
 			return true;
@@ -22,8 +21,7 @@ public class balancedTree {
 		
 	}
 	//java
-	//java method 2
-	
+	//java 
 	public int isBalanced2(TreeNode root){    
 	       if(root == null) return 0;
 	       int leftHeight = isBalanced2(root.left);
@@ -36,30 +34,6 @@ public class balancedTree {
 	       else{return Math.max(rightHeight, leftHeight)+1;}//left ,right,root 
 	    		   
 	}
-	public boolean IsBalanced_Solution2(TreeNode root) {
-        int check =  isBalanced2(root);
-        if(check == -1){
-            return false;
-        }else{return true;}
-    }
-	
-	
-	//java method 3
-	static boolean isbalanced =true;
-	public int isBalanced3(TreeNode root){
-		if(root == null) return 0;
-		int left = isBalanced3(root.left);
-		int right = isBalanced3(root.right);
-		if(Math.abs(left-right)>1){
-			isbalanced =false;
-		}
-		return Math.max(right, left)+1;
-		
-	}
-	public boolean IsBalanced_Solution3(TreeNode root) {
-        isBalanced3(root);
-      return isbalanced;
-    }
 	      
 	     
 	   

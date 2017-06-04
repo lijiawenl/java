@@ -36,7 +36,7 @@ public class balancedTree {
 	       else{return Math.max(rightHeight, leftHeight)+1;}//left ,right,root 
 	    		   
 	}
-	public boolean IsBalanced_Solution2(TreeNode root) {
+	public boolean IsBalanced_Solution(TreeNode root) {
         int check =  isBalanced2(root);
         if(check == -1){
             return false;
@@ -56,10 +56,6 @@ public class balancedTree {
 		return Math.max(right, left)+1;
 		
 	}
-	public boolean IsBalanced_Solution3(TreeNode root) {
-        isBalanced3(root);
-      return isbalanced;
-    }
 	      
 	     
 	   
